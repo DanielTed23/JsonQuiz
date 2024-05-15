@@ -9,50 +9,37 @@ namespace VandQuizJson
     {
         static void Main(string[] args)
         {
-            // Angiver stien til JSON-filen, der skal læses.
-            string path = "WaterQuiz.json";
-            // Læser hele indholdet af JSON-filen ind i en streng.
-            string json = File.ReadAllText(path);
-            // Omdanner JSON-strengen til en liste af VandData-objekter.
-            List<VandData> AlleSpg = JsonConvert.DeserializeObject<List<VandData>>(json);
+            Console.WriteLine("Velkommen til Json Quiz vælg en af de nederstående");
 
-            // Gennemgår alle spørgsmål i listen.
-            for (int i = 0; i < AlleSpg.Count; i++)
+            while (true)
             {
-                // Udskriver spørgsmålet til konsollen.
-                Console.WriteLine(AlleSpg[i].sporgsmol);
-                // Udskriver første svarmulighed med nummer foran.
-                Console.WriteLine("1. " + AlleSpg[i].svarmulighed1[0]);
-                // Udskriver anden svarmulighed med nummer foran.
-                Console.WriteLine("2. " + AlleSpg[i].svarmulighed1[1]);
-                // Udskriver tredje svarmulighed med nummer foran.
-                Console.WriteLine("3. " + AlleSpg[i].svarmulighed1[2]);
-
-                // Bed brugeren om at indtaste et svarnummer.
-                Console.Write("Indtast dit svar (nummer): ");
-                int brugerSvar = Convert.ToInt32(Console.ReadLine());
-
-                // Justerer brugerens svar fra et et-baseret til et nulbaseret indeks.
-                int indeksSvar = brugerSvar - 1;
-
-                // Tjekker om det indtastede svar er korrekt.
-                if (indeksSvar == AlleSpg[i].korrektsvar)
+              
+                Console.WriteLine("1. VandQuiz");
+                Console.WriteLine("2. OOPSpgQuiz");
+                Console.WriteLine("3. SqlQuiz");
+                Console.WriteLine("4. Aslut");
+                
+                if (int.TryParse(Console.ReadLine(),out int choice))
                 {
-                    // Udskriver positiv tilbagemelding, hvis svaret er korrekt.
-                    Console.WriteLine("korrekt nice du ikke helt dum");
-                }
-                else
-                {
-                    // Udskriver negativ tilbagemelding, hvis svaret er forkert.
-                    Console.WriteLine("Forkert du dum LoL");
-                }
+                    switch (choice)
+                    {
+                        case 1:
+                        VandSpg vandSpg = new VandSpg();
+                        break;
 
-                // Viser ekstra information om spørgsmålet.
-                Console.WriteLine(AlleSpg[i].infoText);
-                // Venter på brugerinput før fortsættelse.
-                Console.ReadLine();
-                // Rydder konsolvinduet for næste spørgsmål.
-                Console.Clear();
+                        case 2:
+                        OOPSpg oOPSpg = new OOPSpg();
+                        break;
+
+                        case 3:
+                        SqlSpg sqlSpg = new SqlSpg();   
+                        break;
+
+                        case 4:
+                        Console.WriteLine("Ses");
+                        return;
+                    }
+                }
             }
         }
     }

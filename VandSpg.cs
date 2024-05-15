@@ -9,6 +9,11 @@ namespace VandQuizJson
 {
     public class VandSpg
     {
+
+        public VandSpg() 
+        {
+            Vand();
+        }
         public void Vand()
         {
             // Angiver stien til JSON-filen, der skal læses.
