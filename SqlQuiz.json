@@ -1,9 +1,52 @@
 ﻿[
-
   {
-    "sporgsmol": "Hvor meget vand bruger den gennemsnitlige dansker om dagen?",
-    "svarmulighed1": [ "105 liter", "505 liter", "55 liter" ],
-    "korrektsvar": 0,
-    "infoText": "I gennemsnit bruger hver dansker 105 liter vand om dagen. Forbruget er faldet de senere år. For 20 år siden brugte hver dansker i gennemsnit cirka 200 liter vand i døgnet, viser data fra brancheorganisationen Danva."
+    "sporgsmol": "Hvad bruges SQL primært til?",
+    "svarmulighed1": [ "At designe grafik", "At administrere databaser", "At programmere spil" ],
+    "korrektsvar": 1
+  },
+  {
+    "sporgsmol": "Hvordan vælger du alle kolonner fra en tabel ved navn 'Kunder'?",
+    "svarmulighed1": [ "SELECT * FROM Kunder", "SELECT Kunder", "EXTRACT ALL FROM Kunder" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvordan kan du finde antallet af rækker i en tabel?",
+    "svarmulighed1": [ "COUNT(*)", "SUM(rows)", "LENGTH(table)" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvilken SQL-klausul bruges til at sortere output?",
+    "svarmulighed1": [ "SORT BY", "ORDER BY", "ALIGN BY" ],
+    "korrektsvar": 1
+  },
+  {
+    "sporgsmol": "Hvilken SQL-klausul bruges til at begrænse de returnerede poster?",
+    "svarmulighed1": [ "LIMIT", "STOP", "RESTRICT" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvordan opdaterer du data i en SQL-database?",
+    "svarmulighed1": [ "UPDATE", "MODIFY", "CHANGE" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvordan sletter du en tabel i SQL?",
+    "svarmulighed1": [ "REMOVE TABLE", "DELETE TABLE", "DROP TABLE" ],
+    "korrektsvar": 2
+  },
+  {
+    "sporgsmol": "Hvordan indsætter du en ny række i en tabel?",
+    "svarmulighed1": [ "INSERT INTO tabel (kolonner) VALUES (værdier)", "ADD ROW INTO tabel (kolonner) VALUES (værdier)", "PUSH INTO tabel (kolonner) VALUES (værdier)" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvad betyder SQL?",
+    "svarmulighed1": [ "Standard Query Language", "Structured Query Language", "Simple Query Language" ],
+    "korrektsvar": 1
+  },
+  {
+    "sporgsmol": "Hvordan vælger du poster, hvor en kolonne 'Alder' er større end 30?",
+    "svarmulighed1": [ "SELECT * FROM tabel WHERE Alder > 30", "SELECT * FROM tabel HAVING Alder > 30", "SELECT * WHERE Alder > 30 FROM tabel" ],
+    "korrektsvar": 0
   }
 ]

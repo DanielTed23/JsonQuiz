@@ -1,8 +1,52 @@
 ﻿[
   {
-    "sporgsmol": "Hvor meget vand bruger den gennemsnitlige dansker om dagen?",
-    "svarmulighed1": [ "105 liter", "505 liter", "55 liter" ],
-    "korrektsvar": 0,
-    "infoText": "I gennemsnit bruger hver dansker 105 liter vand om dagen. Forbruget er faldet de senere år. For 20 år siden brugte hver dansker i gennemsnit cirka 200 liter vand i døgnet, viser data fra brancheorganisationen Danva."
+    "sporgsmol": "Hvad er standard datatypen for et heltal i C#?",
+    "svarmulighed1": [ "int", "float", "string" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvordan skriver man en kommentar i C#?",
+    "svarmulighed1": [ "// kommentar", "<-- kommentar -->", "# kommentar" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvilken nøgleord bruges til at oprette en ny instans af et objekt?",
+    "svarmulighed1": [ "new", "class", "struct" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvilken metode bruges til at konvertere en String til en Integer?",
+    "svarmulighed1": [ "ToInt()", "Parse()", "Convert.ToInt32()" ],
+    "korrektsvar": 2
+  },
+  {
+    "sporgsmol": "Hvordan definerer man en metode i C#?",
+    "svarmulighed1": [ "void MyMethod()", "function MyMethod()", "method MyMethod()" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvordan opretter man en betinget if-else struktur?",
+    "svarmulighed1": [ "if (condition) { } else { }", "if (condition) then { }", "if (condition) -> { }" ],
+    "korrektsvar": 0
+  },
+  {
+    "sporgsmol": "Hvad returnerer 'Console.ReadLine()' metoden?",
+    "svarmulighed1": [ "En int", "En string", "En char" ],
+    "korrektsvar": 1
+  },
+  {
+    "sporgsmol": "Hvilket nøgleord bruges til at indikere en fejlhåndtering i C#?",
+    "svarmulighed1": [ "try", "error", "catch" ],
+    "korrektsvar": 2
+  },
+  {
+    "sporgsmol": "Hvad er formålet med 'namespace' i C#?",
+    "svarmulighed1": [ "At definere et område med synlige variable", "At pakke relaterede klasser sammen", "At importere biblioteker" ],
+    "korrektsvar": 1
+  },
+  {
+    "sporgsmol": "Hvilket nøgleord bruges til at definere en uforanderlig variabel?",
+    "svarmulighed1": [ "static", "const", "fixed" ],
+    "korrektsvar": 1
   }
 ]
