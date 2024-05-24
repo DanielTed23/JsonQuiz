@@ -7,6 +7,7 @@ namespace VandQuizJson
     {
         public void Apirun()
         {
+            string abc = "abcdef";
             // Respons fra api, bliver sat ind i listen questionList
             List<Format> questionList = ConvertApi();
 
@@ -16,17 +17,23 @@ namespace VandQuizJson
                 Console.WriteLine(question.question);
 
                 // Hvert question, har flere svar muligheder, som vi udskriver via foreach loop
+                int i = 0;
                 foreach (var answer in question.answers)
                 {
+                    
                     if (answer.Value is not null)
                     {
-                        Console.WriteLine(answer.Value);
+                       
+                        Console.WriteLine(abc[i]+") " + answer.Value);
+                        
                     }
+                    i++;
                 }
 
                 // Tager input fra bruger, og ligger det i en variable
                 Console.WriteLine("Indtast dit svar");
                 string svar = Console.ReadLine();
+                
 
                 // Sammensætter svar til en ny string, som bliver kontrollet, om svaret er korrekt / true
                 string svarString = "answer_" + svar + "_correct";

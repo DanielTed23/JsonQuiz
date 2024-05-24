@@ -16,7 +16,7 @@ namespace VandQuizJson
             Console.WriteLine("4. for Api");
             Console.Write("Indtast dit valg (nummer): ");
             int valg = Convert.ToInt32(Console.ReadLine());
-
+            Console.WriteLine();
             string path = "";
             switch (valg)
             {
