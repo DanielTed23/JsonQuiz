@@ -4,13 +4,21 @@ using RestSharp;
 
 namespace VandQuizJson
 {
-    internal class Api : ApiRC
+    internal class Api
     {
+        private ApiRC _apiRC;
+        public Api()
+        {
+
+            _apiRC = new ApiRC();
+        }
+
+
         public void Apirun()
         {
             string abc = "abcdef";
             // Respons fra api, bliver sat ind i listen questionList
-            List<Format> questionList = ConvertApi();
+            List<Format> questionList = _apiRC.ConvertApi();
 
             // Hvert question bliver udskrevet via foreach loop
             foreach (Format question in questionList)
@@ -50,7 +58,7 @@ namespace VandQuizJson
 
             }
 
-            
+
         }
 
     }

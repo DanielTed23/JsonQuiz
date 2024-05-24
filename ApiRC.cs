@@ -2,37 +2,37 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VandQuizJson
 {
     internal class ApiRC
     {
-        private static string GetApiResponse(string difficulty = "Easy", string limit = "10", string category = "Code")
+        private  string GetApiResponse(string difficulty, string limit)
         {
-            // Set the url for the API that we want to call
+            // Sæt URL for API, som vi vil kalde
             RestClient client = new("https://quizapi.io/api/v1/questions");
-            // Create a request to the API
+            // Opret en anmodning til API'en
             RestRequest request = new();
 
-            // Add parameters to the request
+            // Tilføj parametre til anmodningen
+            request.AddParameter("apiKey", "5WSuwStMLRtsTBirMAQP9ZJhU0zpIFwisu3Ok4El"); // Tilføj min API-nøgle
+            request.AddParameter("limit", limit); // Sæt antallet af spørgsmål
+            request.AddParameter("difficulty", difficulty); // Sæt sværhedsgraden
+            request.AddParameter("category", "Code"); // Sæt kategorien til 'Code' som standard og uden brugerindgriben
 
-            request.AddParameter("apiKey", "5WSuwStMLRtsTBirMAQP9ZJhU0zpIFwisu3Ok4El"); // Add my API-Key
-            request.AddParameter("limit", limit); // Set the limit of questions
-            request.AddParameter("difficulty", difficulty); // Set the difficulty
-            request.AddParameter("category", category); // Set the category
-
-            return client.Execute(request).Content; // Return the response content from the API
+            return client.Execute(request).Content; // Returner svaret fra API'en
         }
 
-
-
-        public static List<Format> ConvertApi()
+        public  List<Format> ConvertApi()
         {
-            // Convert the response to a list of Format objects by deserializing the JSON-response
-            return JsonConvert.DeserializeObject<List<Format>>(GetApiResponse(/*GetDifficulty(), GetLimit(), GetCategory()*/));
+            // Spørger brugeren om at vælge sværhedsgrad og antal spørgsmål
+            Console.WriteLine("Indtast sværhedsgrad (Easy, Medium, Hard):");
+            string difficulty = Console.ReadLine();
+            Console.WriteLine("Indtast antallet af spørgsmål:");
+            string limit = Console.ReadLine();
+
+            // Konverter svaret til en liste af Format objekter ved at deserialize JSON-svaret
+            return JsonConvert.DeserializeObject<List<Format>>(GetApiResponse(difficulty, limit));
         }
     }
 }

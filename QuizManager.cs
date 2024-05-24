@@ -29,20 +29,20 @@ namespace VandQuizJson
                 case 3:
                     path = "WaterQuiz.json"; // Stien til Vandforbrugs-spørgsmål.
                     break;
-
                 case 4:
                     Api api = new Api();
                     api.Apirun();
-                    break; 
+                    return; // Tilføjet 'return' for at undgå yderligere udførelse efter API kaldet.
                 default:
                     Console.WriteLine("Ugyldigt valg");
                     return;
             }
-            if (path == null)
-            {
 
-            string json = File.ReadAllText(path);
-            List<QuizData> sporgsmalListe = JsonConvert.DeserializeObject<List<QuizData>>(json);
+            // Denne blok skal udføres, når 'path' ikke er null, og valget ikke er API.
+            if (!string.IsNullOrEmpty(path))
+            {
+                string json = File.ReadAllText(path);
+                List<QuizData> sporgsmalListe = JsonConvert.DeserializeObject<List<QuizData>>(json);
 
                 foreach (var spg in sporgsmalListe)
                 {
@@ -56,7 +56,7 @@ namespace VandQuizJson
                     int brugerSvar = Convert.ToInt32(Console.ReadLine());
                     int indeksSvar = brugerSvar - 1;
 
-                    if (indeksSvar == spg.korrektsvar)
+                    if (indeksSvar >= 0 && indeksSvar < spg.svarmulighed1.Count && indeksSvar == spg.korrektsvar)
                     {
                         Console.WriteLine("Korrekt!");
                     }
@@ -66,7 +66,6 @@ namespace VandQuizJson
                     }
 
                     Console.WriteLine(spg.infoText);
-                    
                 }
                 Console.WriteLine("Tryk 'Enter' for at fortsætte...");
                 Console.ReadLine();
@@ -75,4 +74,3 @@ namespace VandQuizJson
         }
     }
 }
-
